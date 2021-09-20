@@ -10,7 +10,10 @@ import java.util.Scanner;
  *
  * @author ADMIN
  */
-abstract class dogs {
+    /**
+     *  abstract class  dogs
+     */ 
+abstract class  dogs {
     private String name;
     private int age;
     private String height;
@@ -25,10 +28,10 @@ abstract class dogs {
     }
     abstract void barking();
     public void show(){
-        System.out.println("name is: "+ name+"\n");
-        System.out.println("age is : "+age+"\n");
-        System.out.println("height is : "+height+"\n");
-        System.out.println("weight is : "+weight+"\n");
+        System.out.println("name is: "+ name);
+        System.out.println("age is : "+age);
+        System.out.println("height is : "+height);
+        System.out.println("weight is : "+weight);
     }
     public String getName() {
         return name;
@@ -62,6 +65,9 @@ abstract class dogs {
         this.weight = weight;
     }
 }
+     /**
+     *  class chihuahua
+     */ 
 class Chihuahua extends dogs{
     public Chihuahua() {
         super();
@@ -75,6 +81,9 @@ class Chihuahua extends dogs{
         System.out.println("barking: goc goc");
     }
 }
+     /**
+     *  class begie
+     */ 
 class Begie extends dogs{
     public Begie() {
         super();
@@ -87,6 +96,9 @@ class Begie extends dogs{
         System.out.println("barking: gau gau");
     }
 }
+     /**
+     *  class AlskanMalamute
+     */  
 class AlskanMalamute extends dogs{
     private String hu;
     public AlskanMalamute() {
@@ -101,6 +113,9 @@ class AlskanMalamute extends dogs{
         System.out.println("barking: Woof Woof"+ hu);
     }
 }
+     /**
+     *  class Husky
+     */
 class Husky extends dogs{
     private String hu;
     public Husky() {
@@ -115,6 +130,9 @@ class Husky extends dogs{
         System.out.println("barking: Wooooooo "+ hu);
     }
 }
+     /**
+     *  class Pitbull
+     */  
 class Pitbull extends dogs{
     public Pitbull() {
         super();
@@ -127,6 +145,9 @@ class Pitbull extends dogs{
         System.out.println("barking: gu gu");
     }
 }
+    /**
+     * Main
+     */
 public class Dog {
     public static Scanner scanner = new Scanner(System.in);
  
