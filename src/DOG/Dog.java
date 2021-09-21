@@ -11,16 +11,16 @@ import java.util.Scanner;
  * @author ADMIN
  */
     /**
-     *  abstract class  dogs
+     *  abstract class  Dogs
      */ 
-abstract class  dogs {
+abstract class  Dogs {
     private String name;
     private int age;
     private String height;
     private String weight;
-    public dogs() {
+    public Dogs() {
     }
-    public dogs(String name, int age, String height, String weight) {
+    public Dogs(String name, int age, String height, String weight) {
         this.name = name;
         this.age = age;
         this.height = height;
@@ -68,7 +68,7 @@ abstract class  dogs {
      /**
      *  class chihuahua
      */ 
-class Chihuahua extends dogs{
+class Chihuahua extends Dogs{
     public Chihuahua() {
         super();
     }
@@ -84,7 +84,7 @@ class Chihuahua extends dogs{
      /**
      *  class begie
      */ 
-class Begie extends dogs{
+class Begie extends Dogs{
     public Begie() {
         super();
     }
@@ -99,7 +99,7 @@ class Begie extends dogs{
      /**
      *  class AlskanMalamute
      */  
-class AlskanMalamute extends dogs{
+class AlskanMalamute extends Dogs{
     private String hu;
     public AlskanMalamute() {
         super();
@@ -116,7 +116,7 @@ class AlskanMalamute extends dogs{
      /**
      *  class Husky
      */
-class Husky extends dogs{
+class Husky extends Dogs{
     private String hu;
     public Husky() {
         super();
@@ -133,7 +133,7 @@ class Husky extends dogs{
      /**
      *  class Pitbull
      */  
-class Pitbull extends dogs{
+class Pitbull extends Dogs{
     public Pitbull() {
         super();
     }
@@ -154,11 +154,11 @@ public class Dog {
     public static void main(String[] args) {
         String choose = null;
         boolean exit = false;
-        dogs chiHuaHua=new Chihuahua("Rex",1,"0,3 m","9 kg");
-        dogs begie=new Begie("To",1,"0,6 m","40 kg");
-        dogs alskanMalamute=new AlskanMalamute("Beo",1,"0,3 m","15 kg");
-        dogs husky=new Husky("Ngao",2,"0,3 m","15 kg");
-        dogs pitbull= new Pitbull("Bo",2,"0,4 m","20 kg");
+        Dogs chiHuaHua=new Chihuahua("Rex",1,"0,3 m","9 kg");
+        Dogs begie=new Begie("To",1,"0,6 m","40 kg");
+        Dogs alskanMalamute=new AlskanMalamute("Beo",1,"0,3 m","15 kg");
+        Dogs husky=new Husky("Ngao",2,"0,3 m","15 kg");
+        Dogs pitbull= new Pitbull("Bo",2,"0,4 m","20 kg");
         // show menu
         showMenu();
         while (true) {
@@ -204,7 +204,7 @@ public class Dog {
      * create menu
      */
     public static void showMenu() {
-        System.out.println("-----------dS------------");
+        System.out.println("-----------DOGS------------");
         System.out.println("1. Chihuahua.");
         System.out.println("2. Begie");
         System.out.println("3. AlskanMalamute");
