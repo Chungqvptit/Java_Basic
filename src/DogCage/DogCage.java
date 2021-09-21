@@ -14,16 +14,16 @@ import java.util.Scanner;
  * @author ADMIN
  */
      /**
-     *  abstract class  dogs
+     *  abstract class  Dogs
      */ 
-abstract class  dogs {
+abstract class  Dogs {
     private String name;
     private int age;
     private int height;
     private int weight;
-    public dogs() {
+    public Dogs() {
     }
-    public dogs(String name, int age, int height, int weight) {
+    public Dogs(String name, int age, int height, int weight) {
         this.name = name;
         this.age = age;
         this.height = height;
@@ -65,7 +65,7 @@ abstract class  dogs {
      /**
      *  class chihuahua
      */ 
-class Chihuahua extends dogs{
+class Chihuahua extends Dogs{
     public Chihuahua() {
         super();
     }
@@ -77,11 +77,10 @@ class Chihuahua extends dogs{
         return ("goc goc");
     }
 }
-
      /**
      *  class begie
      */ 
-class Begie extends dogs{
+class Begie extends Dogs{
     public Begie() {
         super();
     }
@@ -96,7 +95,7 @@ class Begie extends dogs{
      /**
      *  class AlskanMalamute
      */  
-class AlskanMalamute extends dogs{
+class AlskanMalamute extends Dogs{
     private String hu;
     public AlskanMalamute() {
         super();
@@ -113,7 +112,7 @@ class AlskanMalamute extends dogs{
      /**
      *  class Husky
      */  
-class Husky extends dogs{
+class Husky extends Dogs{
     private String hu;
     public Husky() {
         super();
@@ -130,7 +129,7 @@ class Husky extends dogs{
      /**
      *  class Pitbull
      */  
-class Pitbull extends dogs{
+class Pitbull extends Dogs{
     public Pitbull() {
         super();
     }
@@ -147,17 +146,17 @@ class Pitbull extends dogs{
      */   
 class DogCages{
     public static Scanner scanner = new Scanner(System.in);
-    private int maxHeight ;
-    private List<dogs> listDogInDC;
-    private List<dogs> listDogOutDC;
-    public static final int MAX_HEIGHT= 100;
+    private int maxWeight ;
+    private List<Dogs> listDogInDC;
+    private List<Dogs> listDogOutDC;
+    public static final int MAX_WEIGHT= 100;
 
     public DogCages() {
     }
 
-    public DogCages( List<dogs> listDogInDC, 
-            List<dogs> listDogOutDC) {
-        this.maxHeight = MAX_HEIGHT;
+    public DogCages( List<Dogs> listDogInDC, 
+            List<Dogs> listDogOutDC) {
+        this.maxWeight = MAX_WEIGHT;
         this.listDogInDC = listDogInDC;
         this.listDogOutDC = listDogOutDC;
     }
@@ -165,11 +164,11 @@ class DogCages{
      *  add a dog
      */   
     public void addDog() {
-        if(maxHeight==0){
+        if(maxWeight==0){
             System.out.println("can't add dog, because the dogcage is full");
         }else{
-            System.out.println("List the dogs in the dogcage: ");
-            for(dogs x: listDogOutDC){
+            System.out.println("List the Dogs in the dogcage: ");
+            for(Dogs x: listDogOutDC){
                 System.out.println("name: "+ x.getName()+", age: "+ x.getAge()
                         +", height: "+x.getHeight()+", weight:"+x.getWeight()
                         +", barking: "+x.barking());
@@ -179,15 +178,15 @@ class DogCages{
                         + "the dogcage : ");
             while(check){
                 String name= scanner.nextLine().trim(); 
-                for(dogs x: listDogOutDC) {
+                for(Dogs x: listDogOutDC) {
                     if(name.equals(x.getName())){
-                        maxHeight-=x.getWeight();
-                        if(maxHeight>=0){
+                        maxWeight-=x.getWeight();
+                        if(maxWeight>=0){
                             listDogInDC.add(x);
                             listDogOutDC.remove(x);
                             System.out.println("add dog Successfully");
                         }else{
-                            maxHeight+=x.getWeight();
+                            maxWeight+=x.getWeight();
                             System.out.println("can't add dog, because there's "
                                     + "not enough room in the dog's cage");
                         }
@@ -199,8 +198,8 @@ class DogCages{
                 System.out.println("the name invalid , please input again: ");
                 }
             } 
-            System.out.println("List the dogs in the dogcage: ");
-            for( dogs x: listDogInDC){
+            System.out.println("List the Dogs in the dogcage: ");
+            for( Dogs x: listDogInDC){
                 System.out.println("name: "+ x.getName()+", age: "+ x.getAge()
                         +", height: "+x.getHeight()+", weight:"+x.getWeight()
                         +", barking: "+x.barking());
@@ -212,10 +211,10 @@ class DogCages{
      */   
     public void removeDog() {
         if(listDogInDC.size()==0){
-            System.out.println("the dogcage has no dogs . Please add the dog "
+            System.out.println("the dogcage has no Dogs . Please add the dog "
                     + "to the dogcage");
         }else{
-            for(dogs x: listDogInDC){
+            for(Dogs x: listDogInDC){
                 System.out.println("name: "+ x.getName()+", age: "+ x.getAge()
                         +", height: "+x.getHeight()+", weight:"+x.getWeight()
                         +", barking: "+x.barking());
@@ -225,10 +224,10 @@ class DogCages{
                         + "the dogcage : ");
             while(check){
                 String name= scanner.nextLine().trim(); 
-                for(dogs x: listDogInDC) {
+                for(Dogs x: listDogInDC) {
                     if(name.equals(x.getName())){
                         listDogInDC.remove(x);
-                        maxHeight+=x.getWeight();
+                        maxWeight+=x.getWeight();
                         System.out.println("remove dog Successfully");
                         check=false;
                         break;
@@ -237,7 +236,7 @@ class DogCages{
                 System.out.println("the name invalid , please input again: ");
             } 
             System.out.println("");
-            for( dogs x: listDogInDC){
+            for( Dogs x: listDogInDC){
                 System.out.println("name: "+ x.getName()+", age: "+ x.getAge()
                         +", height: "+x.getHeight()+", weight:"+x.getWeight()
                         + ", barking: "+x.barking());
@@ -248,7 +247,7 @@ class DogCages{
      *  when throw squirrel
      */   
     public void throwSquirrel(){
-        for( dogs x: listDogInDC){
+        for( Dogs x: listDogInDC){
             System.out.println(x.getName()+", barking: "+x.barking());
         } 
     }
@@ -257,7 +256,7 @@ class DogCages{
      */   
     public int getTotalWeight(){
         int totalWeight=0;
-        for(dogs x: listDogInDC){
+        for(Dogs x: listDogInDC){
             totalWeight=+x.getWeight();
         }
         return totalWeight;
@@ -293,11 +292,11 @@ class DogCages{
         checkListDogs("gu gu");
     }
      /**
-     * Check List dogs type in the dog cage
+     * Check List Dogs type in the dog cage
      */
     public void checkListDogs(String barking){
         boolean check=true;
-        for(dogs x: listDogInDC){
+        for(Dogs x: listDogInDC){
             if(x.barking().equals(barking)){
                 System.out.println("name: "+ x.getName()+", age: "+ x.getAge()
                         +", height: "+x.getHeight()+", weight:"+x.getWeight()
@@ -306,30 +305,30 @@ class DogCages{
             }
         }
         if(true){
-            System.out.println("There are no dogs of this type in the dog cage");
+            System.out.println("There are no Dogs of this type in the dog cage");
         }        
     }
-    public int getMaxHeight() {
-        return maxHeight;
+    public int getMaxWeight() {
+        return maxWeight;
     }
 
-    public void setMaxHeight(int maxHeight) {
-        this.maxHeight = maxHeight;
+    public void setMaxWeight(int maxWeight) {
+        this.maxWeight = maxWeight;
     }
 
-    public List<dogs> getListDogInDC() {
+    public List<Dogs> getListDogInDC() {
         return listDogInDC;
     }
 
-    public void setListDogInDC(List<dogs> listDogInDC) {
+    public void setListDogInDC(List<Dogs> listDogInDC) {
         this.listDogInDC = listDogInDC;
     }
 
-    public List<dogs> getListDogOutDC() {
+    public List<Dogs> getListDogOutDC() {
         return listDogOutDC;
     }
 
-    public void setListDogOutDC(List<dogs> listDogOutDC) {
+    public void setListDogOutDC(List<Dogs> listDogOutDC) {
         this.listDogOutDC = listDogOutDC;
     }
     
@@ -343,13 +342,13 @@ public class DogCage {
     public static void main(String[] args) {
         String choose = null;
         boolean exit = false;
-        dogs chiHuaHua=new Chihuahua("Rex",1,300,9);
-        dogs begie=new Begie("To",1,600,40);
-        dogs alskanMalamute=new AlskanMalamute("Beo",1,300,15);
-        dogs husky=new Husky("Ngao",2,300,15);
-        dogs pitbull= new Pitbull("Bo",2,500,35);
-        List<dogs> listDogInDC = new ArrayList<dogs>();
-        List<dogs> listDogOutDC = new ArrayList<dogs>();
+        Dogs chiHuaHua=new Chihuahua("Rex",1,300,9);
+        Dogs begie=new Begie("To",1,600,40);
+        Dogs alskanMalamute=new AlskanMalamute("Beo",1,300,15);
+        Dogs husky=new Husky("Ngao",2,300,15);
+        Dogs pitbull= new Pitbull("Bo",2,500,35);
+        List<Dogs> listDogInDC = new ArrayList<Dogs>();
+        List<Dogs> listDogOutDC = new ArrayList<Dogs>();
         listDogOutDC.add(chiHuaHua);
         listDogOutDC.add(begie);
         listDogOutDC.add(alskanMalamute);
