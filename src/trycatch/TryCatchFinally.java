@@ -16,7 +16,7 @@ import java.io.IOException;
  */
 public class TryCatchFinally {
     // throw & throws
-    void message() throws ArithmeticException 
+    public static void message() throws ArithmeticException 
     {  
         throw new ArithmeticException("sorry");  
     }  
@@ -79,7 +79,6 @@ public class TryCatchFinally {
             System.out.println("finally block executed");
         }
         // throw & throws
-        TryCatchFinally mess = new TryCatchFinally();
-        mess.message();
+        message();
     }
 }
